@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    
+    <button onclick="show_movie_rank(-1)">&lt;</button>
+    <button onclick="show_movie_rank(0)">영화순위 보기</button>
+    <button onclick="show_movie_rank(1)">&gt;</button>
+    <table border>
+        <thead>
+            <tr>
+                <td>영화순위</td>
+                <td>영화이름</td>
+                <td>누적관객수</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        function show_movie_rank(num){
+            $.ajax({
+                url :"http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+                data : {
+                    key : "f5eef3421c602c6cb7ea224104795888",
+                    targetDt : "20230301"
+                },
+                success : function(e){
+                    console.log(e);
+                    console.log(e.boxOfficeResult.dailyBoxOfficeList);
+                        let tbody = '';
+                        for (let a of e.boxOfficeResult.dailyBoxOfficeList){
+                            console.log(a);
+                            tbody += 
+                            `<tr>
+                                <td>${a.rank}</td>
+                                <td>${a.movieNm}</td>
+                                <td>${a.audiAcc}</td>
+                            </tr>`;
+                        }
+                    $('tbody').html(tbody);
+                }
+            })
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공공데이터</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>시간</td>
+                <td>기온</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+    <script>
+
+        /*
+        AJAX 개요
+        - Asynchronous JavaScript And XML의 약자
+        - 서버로부터 데이터를 가져와 전체 페이지를 새로 고치지 않고 일부만 로드해 내용물만 바꿀 수 있는 기법
+        - NAVER 아이디 중복체크 기능, 댓글, 검색어 자동완성 등
+        - 요청 후 돌아온 응답데이터를 가지고 현재 페이지에서 새로운 요소를 동적으로 만들어서 뿌려줘야 함
+
+        jQuery에서의 AJAX 통신
+        $.ajax({
+            속성명 : 속성값,
+            속성명 : 속성값
+        })
+
+        * 주요속성
+        - url : 요청할 url(필수로 작성)
+        - type/method : 요청 전송방식(get/post 생략시 기본값은 get)
+        - data : 요청시 전달할 값{키:벨류, 키:벨류,...}
+        - success : AJAX통신 성공시 실행할 함수를 정의
+        - error : AJAX통신 실패시 실행할 함수를 정의
+        - complete : AJAX통신을 성공이든 실패든 간에 무조건 끝나면 실행할 함수를 정의
+        */
+       
+        // 단기예보 조회서비스
+        let msg = '';
+        let time = '';
+
+        for(let i = 2; i < 24; i += 3){
+            
+            time = (i < 10 ? '0' + i : i) + '00';
+            console.log(time)
+            $.ajax({
+                // 서비스를 요청할 url
+                url : "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst",
+                data : {
+                    // 서비스키
+                    serviceKey : "",
+                    // 응답자료형식
+                    dataType : "JSON",
+                    // 조회를 원하는 날짜 YYYYMMDD 형식
+                    base_date : "20230306",
+                    // 0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300 (1일 8회)
+                    base_time : time,
+                    // 좌표
+                    nx : "55",
+                    ny : "124"
+                },
+                success : function(result){
+                    // tmp 1시간 기온
+                    // 
+                    let temps = result.response.body.items.item;
+                    let baseTimes = result.response.body.items.item;
+                    console.log(temps[0]);
+                    temp = temps[0].fcstValue;
+                    // 배열에 담고 오름차순 정렬?
+                    $('tbody').append(`<tr><td>${baseTimes[0].baseTime}</td><td>${temp}</td></tr>`)
+                },
+                error : function(e){
+                }
+            })
+
+        }
+
+    </script>
+</body>
+</html>
