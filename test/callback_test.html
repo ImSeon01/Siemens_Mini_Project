@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>콜백테스트</title>
+</head>
+<body>
+    <button>나는버튼</button>
+    <p>나는p태그</p>
+    <!--1. -->
+    <script>
+        $(function(){
+            let i = 1;
+            let $btn = $('button');
+            let $p = $('p');
+
+            $btn.click(function(){
+                ajax(start, mid, fin);
+            })
+
+            function start(){
+                alert('데이터 전송 시작');
+            }
+            function mid(fin){
+                alert('데이터 전송 중간');
+                if(fin){fin()};
+            }
+            function fin(){
+                alert('데이터 전송 완료');
+            }
+
+            let ajax = function(start, mid, fin){
+                start();
+                $.ajax({
+                    url :"http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+                    data : {
+                        key : "f5eef3421c602c6cb7ea224104795888",
+                        targetDt : "20230301"
+                    },
+                    success : function(result){
+                        mid(fin);
+                        console.log(result);
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

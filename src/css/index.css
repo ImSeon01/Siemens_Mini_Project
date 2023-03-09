@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
 }
 #wrap{
     margin: auto;
@@ -15,17 +24,25 @@ header{
 .logo-area{
     width : 30%;
     float: left;
-    background-color: red;
+    text-align: center;
+}
+#logo{
+    height: 100%;
+}
+#logo:hover{
+    cursor: pointer;
 }
 .title-area{
     width : 40%;
     float: left;
-    background-color: blue;
+    text-align: center;
+    line-height: 60px;
 }
 .d_day-area{
     width: 30%;
     float: left;
     text-align: center;
+    line-height: 60px;
 }
 /*/header영역 끝*/
 /*nav영역 시작*/
@@ -36,27 +53,36 @@ nav{
 .category{
     float: left;
     width: 20%;
-    border: 1px red;
+    height: 100%;
     text-align: center;
-    margin-top: 8px;
+    line-height: 40px;
+    border: 1px solid rgb(224, 224, 224);
+}
+.category:hover{
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
 }
 /*/nav영역 끝*/
 /*main영역 시작*/
 .main{
     width: 100%;
     height: 600px;
-    background-color: pink;
 }
 iframe{
     width: 100%;
     height: 100%;
     background-color: #fff;
+    border: none;
 }
 /*/main영역 끝*/
 /*footer영역 시작*/
 footer{
     width: 100%;
-    height: 200px;
-    background-color: yellow;
+    height: 300px;
+    background: white;
+    border-top: 1px solid rgb(224, 224, 224);
+    padding: 30px 20px 50px;
 }
+
 /*/footer영역 끝*/

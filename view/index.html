@@ -9,9 +9,14 @@
     <!--CSS-->
     <link rel="stylesheet" href="../src/css/index.css">
 
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
     <!--JavaScript-->
     <!--d-day구하는 기능-->
     <script src="../src/js/d_day.js"></script>
+    <!--page 이동-->
+    <script src="../src/js/move.js"></script>
 
 </head>
 <body>
@@ -19,43 +24,41 @@
     <div id="wrap">
         <!--header 영역 시작-->
         <header>
-            <div class="logo-area"></div>
-            <div class="title-area"></div>
+            <div class="logo-area">
+                <img id="logo" src="https://www.sw.or.kr/images/kosa/common/logo.png" onclick="move('home')">
+            </div>
+            <div class="title-area"><h1>임선혁의 자기소개 페이지</h1></div>
             <div class="d_day-area">
-                <h1 id="d_day"></h1>
+                <h2 id="d_day"></h2>
             </div>
         </header>
         <!--/header 영역 끝-->
         <!--nav 영역 시작-->
         <nav>
             <!--category 영역 시작-->
-            <div class="category">Home</div>
-            <div class="category">About Me</div>
-            <div class="category">AJAX</div>
-            <div class="category">KakaoMap</div>
-            <div class="category">GoogleChart</div>
+            <div class="category" onclick="move('home')">Home</div>
+            <div class="category" onclick="move('about_me')">About Me</div>
+            <div class="category" onclick="move('AJAX')">AJAX</div>
+            <div class="category" onclick="move('kakao_map')">KakaoMap</div>
+            <div class="category" onclick="move('google_chart')">GoogleChart</div>
             <!--/category 영역 끝-->
         </nav>
         <!--nav 영역 끝-->
         <!--main 영역 시작-->
         <div class="main">
             <!--iframe 영역 시작-->
-            <iframe src="" scrolling="no"></iframe>
+            <iframe src="" scrolling="no" ></iframe>
             <!--/iframe 영역 끝-->
         </div>
         <!--/main 영역 끝-->
         <!--footer 영역 시작-->
         <footer>
-            <div></div>
-            <div></div>
         </footer>
         <!--footer 영역 끝-->
     </div>
     <!--/전체를 감싸는 warp 영역 끝-->
 
-    <script>
-
-    </script>
 </body>
 
 </html>
+
