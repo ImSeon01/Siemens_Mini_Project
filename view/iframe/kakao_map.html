@@ -14,41 +14,81 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../src/css/common.css">
 </head>
 <body>
 <div id="iframe_wrap" style="width: 1200px; height: 600px;">
-    <h1 style="text-align: center;">카카오맵 api 사용하기</h1>
-    <div id="left" style="float: left; width: 50%; height: 100%;">
+    <br>
+    <h2 style="text-align: center;">카카오맵</h2>
+    <hr>
+    <div id="left">
+        <h2 id="location"></h2>
         <!-- 지도를 표시할 div 입니다 -->
-        <div id="map" style="width:500px;height:350px;"></div>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?"></script>
+        <div id="map" style="width:500px;height:350px; margin-left: 45px; margin-top: 30px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6006a924c09b0de74aaa29792adc7a15"></script>
     </div>
-    <div id="right" style="float: left; width: 50%; height: 100%;">
-        <h2>카카오 맵</h2>
-        <!--우리집-->
-        <button class="btn-primary" onclick="move_map(37.45684426, 126.71075001)">임선혁 사는 곳</button>
-        <!--지멘스 인더스트리 소프트웨어-->
-        <button class="btn-primary" onclick="move_map(37.48876034, 127.05323461)">지멘스 인더스트리 소프트웨어</button>
-        <!--캐디언즈-->
-        <button class="btn-primary" onclick="move_map()">캐디언즈</button>
-        <!--씨테크-->
-        <button class="btn-primary" onclick="move_map()">씨테크</button>
+    <div id="right">
+        <div class="button_area">
+            <!--우리집-->
+            <button class="btn-primary" onclick="move_map(this, 37.45684426, 126.71075001)">임선혁 사는 곳</button><br><br>
+            <!--채용연계 과정 회사-->
+            <button class="btn-primary" onclick="move_map(this, 37.48876034, 127.05323461)">지멘스 인더스트리 소프트웨어</button><br><br>
+            <button class="btn-primary" onclick="move_map(this,37.47896181, 126.88614505)">스페이스솔루션</button><br><br>
+            <button class="btn-primary" onclick="move_map(this, 37.47871347655276, 126.87878821374758)">씨테크시스템</button><br><br>
+            <button class="btn-primary" onclick="move_map(this, 37.47344029561812, 126.88554013436276)">와이씨디아이에스</button><br><br>
+            <button class="btn-primary" onclick="move_map(this, 37.325495654868405, 126.93787431743634)">이삭엔지리어링</button><br><br>
+            <button class="btn-primary" onclick="move_map(this, 37.483538383194684, 127.01787271898537)">캐디언스시스템</button><br><br>
+            <button class="btn-primary" onclick="move_map(this, 37.487032103644, 126.89535649197056)">키미이에스</button>
+        </div>
     </div>
 </div>
 
 <script>
 $(function(){
-    move_map(37.45684426, 126.71075001);
+    move_map(document.querySelector('button'), 37.45684426, 126.71075001);
 })
-function move_map(lat, lon){
+
+function move_map(event, lat, lng){
+    document.getElementById('location').innerHTML = event.innerHTML;
+    // let location_name = event;
+    // console.log(location_name);
     let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = { 
-            center: new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
             level: 4 // 지도의 확대 레벨
         };
     
     // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-    let map = new kakao.maps.Map(mapContainer, mapOption); 
+    let map = new kakao.maps.Map(mapContainer, mapOption);
+        // 마커가 표시될 위치입니다 
+        let markerPosition  = new kakao.maps.LatLng(lat, lng); 
+
+    // 마커를 생성합니다
+    let marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+    let iwContent = '<div style="padding:5px;font-size:0.9rem;"><a href="http://www.easyspub.co.kr" style="color:blue;text-decoration:none;" target="_blank">이지스퍼블리싱</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+    // 인포윈도우를 생성합니다
+    let infowindow = new kakao.maps.InfoWindow({
+    content : iwContent,
+    removable : iwRemoveable
+    });
+
+    // 마커에 마우스오버 이벤트를 등록합니다
+    kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커 위에 인포윈도우를 표시합니다 
+        infowindow.open(map, marker);
+    });
+
 
 }
 

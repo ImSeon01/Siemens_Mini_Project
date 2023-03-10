@@ -4,17 +4,21 @@
     font-weight: 400;
     font-style: normal;
 }
-
+/* 모든 요소들 공틍 시작*/
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Pretendard-Regular';
 }
+a{
+    text-decoration: none; color: black;
+}
 #wrap{
     margin: auto;
     width: 1200px;
 }
+/* 모든 요소들 공틍 끝*/
 /*header영역 시작*/
 header{
     width: 100%;
@@ -49,6 +53,7 @@ header{
 nav{
     width: 100%;
     height: 44px;
+    margin-top: 15px;
 }
 .category{
     float: left;
@@ -83,6 +88,25 @@ footer{
     background: white;
     border-top: 1px solid rgb(224, 224, 224);
     padding: 30px 20px 50px;
+}
+#footer1{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+#footer2{
+    width: 100%;
+    text-align: center;
+}
+#p1{
+    font-size: large;
+    font-weight: 800;
+    height: 60%;
+}
+#p2{
+    font-size: small;
+    color: gray;
+    font-family: serif;
 }
 
 /*/footer영역 끝*/

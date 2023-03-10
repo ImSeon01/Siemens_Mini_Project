@@ -1,0 +1,80 @@
+{
+    "items": [{
+        "item": "지멘스",
+        "dataset": {
+            "img": "../../src/img/지멘스.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        }
+    }, {
+        "item": "스페이스솔루션",
+        "dataset": {
+            "img": "../../src/img/스페이스솔루션.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        } 
+    }, {
+        "item": "씨테크시스템",
+        "dataset": {
+            "img": "../../src/img/씨테크시스템.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        } 
+    }, {
+        "item": "지멘스 인더스트리 소프트웨어",
+        "dataset": {
+            "img": "../../src/img/지멘스.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        } 
+    }, {
+        "item": "지멘스 인더스트리 소프트웨어",
+        "dataset": {
+            "img": "../../src/img/지멘스.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        } 
+    }, {
+        "item": "지멘스 인더스트리 소프트웨어",
+        "dataset": {
+            "img": "../../src/img/지멘스.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        } 
+    }, {
+        "item": "지멘스 인더스트리 소프트웨어",
+        "dataset": {
+            "img": "../../src/img/지멘스.jpg",
+            "establishment_date": "1989년 11월 13일",
+            "sectors": "시스템 소프트웨어 개발 및 공급업",
+            "employees": "280여명",
+            "sales_revenue": "1,453억",
+            "홈페이지": "http://www.siemens.co.kr",
+            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+        } 
+    }]
+}

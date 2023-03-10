@@ -10,12 +10,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <style>
+        #wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
     <button onclick="show_chart()">확인</button>
     <!--차트가 들어갈 DIV 영역-->
-    <div id="chart_div"></div>
+    <div id="wrap">
+        <div id="chart_div"></div>
+    </div>
 
     <script>
         let times = new Array();
@@ -51,6 +61,7 @@
                             ny : "124"
                         },
                         success : function(result){
+                            console.log(result)
                             let time = result.response.body.items.item[0].baseTime;
                             let tmp = result.response.body.items.item[0].fcstValue;
                             times.push({
