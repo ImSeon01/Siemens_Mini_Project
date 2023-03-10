@@ -14,37 +14,37 @@
         "item": "스페이스솔루션",
         "dataset": {
             "img": "../../src/img/스페이스솔루션.jpg",
-            "establishment_date": "1989년 11월 13일",
-            "sectors": "시스템 소프트웨어 개발 및 공급업",
-            "employees": "280여명",
-            "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
-            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+            "establishment_date": "2003년 1월 17일",
+            "sectors": "업종 응용 소프트웨어 개발 및 공급업",
+            "employees": "75여명",
+            "sales_revenue": "428억",
+            "홈페이지": "https://www.spacesolution.kr",
+            "business_areas": "PLM (PDM /DM/CAD/CAM/CAE) Solution 공급 및 서비스"
         } 
     }, {
         "item": "씨테크시스템",
         "dataset": {
             "img": "../../src/img/씨테크시스템.jpg",
-            "establishment_date": "1989년 11월 13일",
-            "sectors": "시스템 소프트웨어 개발 및 공급업",
-            "employees": "280여명",
-            "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
-            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+            "establishment_date": "2000년 9월",
+            "sectors": "R&D Solution 공급 및 서비스",
+            "employees": "26명",
+            "sales_revenue": "200억",
+            "홈페이지": "http://www.citek.co.kr/main#",
+            "business_areas": "소프트웨어 개발,공급,컴퓨터시스템통합"
         } 
     }, {
-        "item": "지멘스 인더스트리 소프트웨어",
+        "item": "와이씨디아이에스",
         "dataset": {
             "img": "../../src/img/지멘스.jpg",
-            "establishment_date": "1989년 11월 13일",
-            "sectors": "시스템 소프트웨어 개발 및 공급업",
-            "employees": "280여명",
-            "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
-            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+            "establishment_date": "1998년 2월 2일",
+            "sectors": "응용 소프트웨어 개발 및 공급업",
+            "employees": "30여명",
+            "sales_revenue": "93억",
+            "홈페이지": "www.ycdis.co.kr",
+            "business_areas": "솔루션·SI·CRM·ERP"
         } 
     }, {
-        "item": "지멘스 인더스트리 소프트웨어",
+        "item": "이삭엔지니어링",
         "dataset": {
             "img": "../../src/img/지멘스.jpg",
             "establishment_date": "1989년 11월 13일",
