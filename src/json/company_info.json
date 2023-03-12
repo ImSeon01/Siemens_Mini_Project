@@ -7,7 +7,7 @@
             "sectors": "시스템 소프트웨어 개발 및 공급업",
             "employees": "280여명",
             "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
+            "homepage": "http://www.siemens.co.kr",
             "business_areas": "시스템 소프트웨어 개발 및 공급업"
         }
     }, {
@@ -18,7 +18,7 @@
             "sectors": "업종 응용 소프트웨어 개발 및 공급업",
             "employees": "75여명",
             "sales_revenue": "428억",
-            "홈페이지": "https://www.spacesolution.kr",
+            "homepage": "https://www.spacesolution.kr",
             "business_areas": "PLM (PDM /DM/CAD/CAM/CAE) Solution 공급 및 서비스"
         } 
     }, {
@@ -29,52 +29,53 @@
             "sectors": "R&D Solution 공급 및 서비스",
             "employees": "26명",
             "sales_revenue": "200억",
-            "홈페이지": "http://www.citek.co.kr/main#",
+            "homepage": "http://www.citek.co.kr/main#",
             "business_areas": "소프트웨어 개발,공급,컴퓨터시스템통합"
         } 
     }, {
         "item": "와이씨디아이에스",
         "dataset": {
-            "img": "../../src/img/지멘스.jpg",
+            "img": "../../src/img/와이씨디아이에스.png",
             "establishment_date": "1998년 2월 2일",
             "sectors": "응용 소프트웨어 개발 및 공급업",
             "employees": "30여명",
             "sales_revenue": "93억",
-            "홈페이지": "www.ycdis.co.kr",
+            "homepage": "www.ycdis.co.kr",
             "business_areas": "솔루션·SI·CRM·ERP"
         } 
     }, {
         "item": "이삭엔지니어링",
         "dataset": {
-            "img": "../../src/img/지멘스.jpg",
+            "img": "../../src/img/이삭엔지리어링.png",
             "establishment_date": "1989년 11월 13일",
             "sectors": "시스템 소프트웨어 개발 및 공급업",
             "employees": "280여명",
             "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
+            "homepage": "http://www.siemens.co.kr",
             "business_areas": "시스템 소프트웨어 개발 및 공급업"
         } 
     }, {
-        "item": "지멘스 인더스트리 소프트웨어",
+        "item": "캐디언스시스템",
         "dataset": {
-            "img": "../../src/img/지멘스.jpg",
-            "establishment_date": "1989년 11월 13일",
-            "sectors": "시스템 소프트웨어 개발 및 공급업",
-            "employees": "280여명",
-            "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
-            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+            "img": "../../src/img/캐디언스시스템.png",
+            "establishment_date": "1995년 10월 16일",
+            "sectors": "응용 소프트웨어 개발 및 공급업",
+            "employees": "30여명",
+            "sales_revenue": "151.6억 (2021년 기준)",
+            "homepage": "https://www.cadians.comr",
+            "business_areas": "솔루션·SI·CRM·ERP"
         } 
     }, {
-        "item": "지멘스 인더스트리 소프트웨어",
+        "item": "키미이에스",
         "dataset": {
-            "img": "../../src/img/지멘스.jpg",
-            "establishment_date": "1989년 11월 13일",
-            "sectors": "시스템 소프트웨어 개발 및 공급업",
-            "employees": "280여명",
-            "sales_revenue": "1,453억",
-            "홈페이지": "http://www.siemens.co.kr",
-            "business_areas": "시스템 소프트웨어 개발 및 공급업"
+            "img": "../../src/img/키미이에스.jgg",
+            "establishment_date": "2012년 12월 3일",
+            "sectors": "응용 소프트웨어 개발 및 공급업",
+            "employees": "35여명",
+            "sales_revenue": "306.4억",
+            "homepage": "http://www.kimies.co.kr",
+            "business_areas": "SIEMENS PLM Software(CAD/CAM/CAE/PLM/DM)제품 공급 /서비스"
         } 
-    }]
+    }
+]
 }

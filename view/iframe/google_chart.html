@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
         
     <!--CSS-->
-    <link rel="stylesheet" href="../../src/css/common.css">
+    <link rel="stylesheet" href="../../src/css/google_chart.css">
 </head>
 <body>
     <div id="wrap">
@@ -27,54 +27,96 @@
         <hr>
         <div id="left">
             <br>
-            <h2>구글 차트</h2>
+            <h3>구글 차트</h3>
             <!--구글 차트 그릴 div 영역-->
-            <div id="chart_div" style="width: 400px; height: 120px; margin-left: 45px; margin-top: 30px;"></div>
+            <div id="timeline" style="height: 180px;"></div>
         </div>
         <div id="right">
             <br>
-            <h2>가공할 데이터</h2>
+            <h3>가공 데이터</h3>
+            <button class="btn btn-primary" onclick="add()">추가</button>
+            <button class="btn btn-danger" onclick="remove()">삭제</button>
+            <table>
+              <thead>
+                <tr>
+                  <td>과정명</td>
+                  <td>시작일</td>
+                  <td>종료일</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row1">
+                  <td><input type="text"></td>
+                  <td><input type="date"></td>
+                  <td><input type="date"></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <buttom class="btn btn-info" onclick="show_chart()">차트 보기</buttom>
         </div>
     </div>
 
+    <script type="text/javascript">
 
 
-    <script>
-      google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
+      let num = $('#right tbody').children().length + 1;
 
-      function drawChart() {
+      function add(){
+        num = $('#right tbody').children().length + 1;
+        if(num > 3){
+          alert('최대 3개입니다.');
+          return;
+        }
+        let row = `  
+                  <tr class="row${num}">
+                    <td><input name="subject" type="text"></td>
+                    <td><input name="start_date" type="date"></td>
+                    <td><input name="end_date" type="date"></td>
+                  </tr>`;
+        $('#right tbody').append(row);
+      }
 
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Memory', 80],
-          ['CPU', 55],
-          ['Network', 68]
-        ]);
+      function remove(){
+        num = $('#right tbody').children().length + 1;
+        if(num == 2){
+          alert('최소 1개입니다.');
+          return;
+        }
+        $('#right tbody tr').remove(`.row${num - 1}`);
+      }
+      function show_chart(){
+        let rows = [];
+        console.log();
+        num = $('#right tbody').children().length + 1;
+        for(let i = 0; i < num - 1; i++){
+          let row = {
+          subject : $('#right tbody tr').eq(i).children().eq(0).children().val(),
+          start_date : $('#right tbody tr').eq(i).children().eq(1).children().val(),
+          end_date : $('#right tbody tr').eq(i).children().eq(2).children().val()
+          };
+          rows.push(row);
+          google_chart(rows);
+        }
+      }
 
-        var options = {
-          width: 400, height: 120,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
+      function google_chart(rows){
+        google.charts.load('current', {'packages':['timeline']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var container = document.getElementById('timeline');
+          var chart = new google.visualization.Timeline(container);
+          var dataTable = new google.visualization.DataTable();
+  
+          dataTable.addColumn({ type: 'string', id: 'President' });
+          dataTable.addColumn({ type: 'date', id: 'Start' });
+          dataTable.addColumn({ type: 'date', id: 'End' });
+          for(const i of rows){
+            dataTable.addRows([
+            [ i.subject, new Date(i.start_date), new Date(i.end_date) ]]);
+          }
+          chart.draw(dataTable);
+        }
       }
     </script>
 

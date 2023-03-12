@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJAX 자동완성</title>
     
+    <!--CSS-->
+    <link rel="stylesheet" href="../../src/css/AJAX.css">
+
     <!--부트스트랩-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
@@ -20,19 +23,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-    <!--CSS-->
-    <link rel="stylesheet" href="../../src/css/common.css">
 
-    <style>
-        #table-area{
-            position: absolute;
-            top: 47%;
-            left: 58%;
-        }
-        #table-area table{
-            position: relative;
-        }
-    </style>
+    <!--JavaScript-->
+    <!--자동완성-->
+    <script src="../../src/js/autocomplete.js"></script>
+    
 </head>
 <body>
     <div id="wrap">
@@ -45,108 +40,13 @@
               <button class="btn btn-primary" type="submit" onclick="search()">검색</button>
             </div>
         </div>
-        <div id="left">
-
-        </div>
+        <div id="left"></div>
+        
         <div id="right">
-            
-
-            <div id="table-area">
-                <table>
-                    <tr>
-                        <td style="width: 80px;">
-                            설립일
-                        </td>
-                        <td style="width: 250px; text-align: left;">
-                            1989년 11월 13일
-                        </td>
-                        </tr>
-                    </tr>
-                    <tr>
-                        <td>업종</td>
-                        <td style="width: 250px; text-align: left;">시스템 소프트웨어 개발 및 공급업</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            직원수
-                        </td>
-                        <td style="width: 250px; text-align: left;">
-                            280여명
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            매출액
-                        </td>
-                        <td style="width: 250px; text-align: left;">
-                            1,453억
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            홈페이지
-                        </td>
-                        <td style="width: 250px; text-align: left;">
-                            http://www.siemens.co.kr
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            사업분야
-                        </td>
-                        <td style="width: 250px; text-align: left;">
-                            시스템 소프트웨어 개발 및 공급업
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            <br>
+            <h3 id="info_title"></h3>
+            <div id="table-area"></div>
         </div>
     </div>
-    <!--자동완성-->
-    <script>
-        let $search_box = $("#search-box");
-        let companies = ['지멘스', '스페이스솔루션', '씨테크시스템', '와이씨디아이에스', '이삭엔지리어링', '캐디언스시스템', '키미이에스'];
-        
-        $(function(){
-            $search_box.autocomplete({
-                source: companies
-            });
-            // autocomplete fin
-        });
-        function search(){
-            if($search_box.val() === ''){
-                alert('검색어를 입력해주세요');
-                return;
-            }
-            $.ajax({
-                url : "../../src/json/test.json",
-                success : function(data){
-                    
-                    let company = '';
-                    let info = '';
-
-                    let result = 0;
-                    $.each(data.items, function(index, item){
-                        // 변수하나를 만들어서 해당 하1을 저장 
-                        // 빈값 
-                        console.log($search_box.val());
-                        console.log(item.item);
-                        if(item.item == $search_box.val()){
-                           result += 1;
-                           company = `
-                                <br>
-                                <h3>${item.item}</h3>
-                                <img src="${item.dataset.img}" style="width: 300px; height: 300px;">
-                                `;
-                                $('#left').html(company);
-                        }
-                    })
-                    if(result == 0){
-                        alert('검색 결과가 없습니다.');
-                    } 
-                }
-            })
-        }// search fin
-        </script>
 </body>
 </html>
