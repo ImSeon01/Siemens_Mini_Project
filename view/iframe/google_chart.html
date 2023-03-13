@@ -19,6 +19,11 @@
         
     <!--CSS-->
     <link rel="stylesheet" href="../../src/css/google_chart.css">
+    
+    <!--JavaScript-->
+    <!--구글차트-->
+    <script src="../../src/js/google_chart.js"></script>
+    
 </head>
 <body>
     <div id="wrap">
@@ -28,8 +33,10 @@
         <div id="left">
             <br>
             <h3>구글 차트</h3>
-            <!--구글 차트 그릴 div 영역-->
-            <div id="timeline" style="height: 180px;"></div>
+            <div id="chart_area">
+              <!--구글 차트 그릴 div 영역-->
+              <div id="timeline" style="height: 180px;"></div>
+            </div>
         </div>
         <div id="right">
             <br>
@@ -60,65 +67,8 @@
     <script type="text/javascript">
 
 
-      let num = $('#right tbody').children().length + 1;
 
-      function add(){
-        num = $('#right tbody').children().length + 1;
-        if(num > 3){
-          alert('최대 3개입니다.');
-          return;
-        }
-        let row = `  
-                  <tr class="row${num}">
-                    <td><input name="subject" type="text"></td>
-                    <td><input name="start_date" type="date"></td>
-                    <td><input name="end_date" type="date"></td>
-                  </tr>`;
-        $('#right tbody').append(row);
-      }
-
-      function remove(){
-        num = $('#right tbody').children().length + 1;
-        if(num == 2){
-          alert('최소 1개입니다.');
-          return;
-        }
-        $('#right tbody tr').remove(`.row${num - 1}`);
-      }
-      function show_chart(){
-        let rows = [];
-        console.log();
-        num = $('#right tbody').children().length + 1;
-        for(let i = 0; i < num - 1; i++){
-          let row = {
-          subject : $('#right tbody tr').eq(i).children().eq(0).children().val(),
-          start_date : $('#right tbody tr').eq(i).children().eq(1).children().val(),
-          end_date : $('#right tbody tr').eq(i).children().eq(2).children().val()
-          };
-          rows.push(row);
-          google_chart(rows);
-        }
-      }
-
-      function google_chart(rows){
-        google.charts.load('current', {'packages':['timeline']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-          var container = document.getElementById('timeline');
-          var chart = new google.visualization.Timeline(container);
-          var dataTable = new google.visualization.DataTable();
-  
-          dataTable.addColumn({ type: 'string', id: 'President' });
-          dataTable.addColumn({ type: 'date', id: 'Start' });
-          dataTable.addColumn({ type: 'date', id: 'End' });
-          for(const i of rows){
-            dataTable.addRows([
-            [ i.subject, new Date(i.start_date), new Date(i.end_date) ]]);
-          }
-          chart.draw(dataTable);
-        }
-      }
-    </script>
+    </>
 
 </body>
 </html>

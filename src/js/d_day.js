@@ -1,4 +1,6 @@
-// 디데이 구하는 함수
+/**  디데이 구하는 함수
+ *  @author 임선혁
+ */
 function calc_d_day(){
     // 1. 현재 날짜 구하기
     const now = new Date();
@@ -18,10 +20,12 @@ function calc_d_day(){
     diff_min = diff_min < 10 ? '0' + diff_min : diff_min; 
     diff_sec = diff_sec < 10 ? '0' + diff_sec : diff_sec;
     return diff_day + '일 ' + diff_hour + ':' + diff_min + ':' + diff_sec; 
-}
-// 디데이 출력하는 함수
+}// cal_c_day fin
+/** 디데이 출력하는 함수 
+ * @author 임선혁
+ */
 function show_d_day(){
     document.getElementById('d_day').innerHTML = "종강 " + calc_d_day();
-}
-// 1초 단위로 디데이 출력하는 함수 호출
+}// show_d_day fin
+/**  1초 단위로 디데이 출력하는 함수 호출*/
 setInterval(()=>show_d_day(), 1000);

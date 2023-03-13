@@ -23,8 +23,8 @@ h2{
     text-align: center;    
 }
 #left img{
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 #right{
@@ -41,4 +41,16 @@ h2{
 .content_area{
     width: 100%;
     height: 75%;
+
+}
+.content_area table{
+    margin-left: 200px;
+}
+.content_area tr td:first-child{
+    text-align: right;
+    font-size: 15px;
+}
+.content_area tr td:last-child{
+    text-align: left;
+    font-size: 15px;
 }

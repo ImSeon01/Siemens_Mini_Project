@@ -22,11 +22,14 @@ h2{
     float: left;
     text-align: center;    
 }
-#left img{
-    width: 500px;
-    height: 500px;
+#chart_area{
+    position: absolute;
+    top: 35%;
+    left: 10%;
 }
-
+#timeline{
+    position: relative;
+}
 #right{
     width: 50%;
     height: 100%;

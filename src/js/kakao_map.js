@@ -1,7 +1,9 @@
 $(function(){
     move_map(document.querySelector('button'), 37.45684426, 126.71075001);
 })
-/**이벤트 발생한 요소, 위도, 경도를 인자값으로 받아서 지도에 표시해주는 함수*/
+/**이벤트 발생한 요소, 위도, 경도를 인자값으로 받아서 지도에 표시해주는 함수
+ * @ref https://developers.kakao.com/docs/latest/ko/local/common
+ */
 function move_map(event, lat, lng){
     $('.buttons button').attr('class', 'btn btn-outline-primary big-lg');
     $(event).attr('class', 'btn btn-primary big-lg disabled');
@@ -39,5 +41,5 @@ function move_map(event, lat, lng){
     kakao.maps.event.addListener(marker, 'click', function() {
         // 마커 위에 인포윈도우를 표시합니다 
         infowindow.open(map, marker);
-    });// fin move_map
+    });// move_map fin
 }
