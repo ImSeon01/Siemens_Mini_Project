@@ -28,7 +28,7 @@
 
 ## 기능 시연 영상
 ### 디데이 카운트 다운
-![Dday_countdown](https://user-images.githubusercontent.com/121650379/224630670-84f292fc-4370-48d3-a1b6-d9ecedd1283b.gif)
+![count_down](https://user-images.githubusercontent.com/121650379/224648974-fe3ce015-6fd3-47a8-ac55-baf5b9e5bb9d.gif)
 
 ### 페이지 이동
 ![move](https://user-images.githubusercontent.com/121650379/224630871-4b18f2e4-bc91-4370-892f-ae6de470c146.gif)
