@@ -25,3 +25,26 @@
 
 ## 참조 문서
 미니 프로젝트 보고서 
+
+## 기능 시연 영상
+### 디데이 카운트 다운
+![Dday_countdown](https://user-images.githubusercontent.com/121650379/224630670-84f292fc-4370-48d3-a1b6-d9ecedd1283b.gif)
+
+### 페이지 이동
+![move](https://user-images.githubusercontent.com/121650379/224630871-4b18f2e4-bc91-4370-892f-ae6de470c146.gif)
+
+### 프로필 출력
+![profile](https://user-images.githubusercontent.com/121650379/224630977-074669e7-7027-4174-a7e7-4447c3d5a292.gif)
+
+### 자동완성
+![autocomplete](https://user-images.githubusercontent.com/121650379/224631054-2668cbf1-3258-46ca-b766-e8017d2301c0.gif)
+
+### 카카오맵
+![kakao_map](https://user-images.githubusercontent.com/121650379/224631125-ad03a9a9-7049-4d1b-aa3d-0202f087380f.gif)
+
+### 구글차
+![google_chart](https://user-images.githubusercontent.com/121650379/224631179-43f25abf-8caf-42c2-8045-da3be840b4ae.gif)
+트
+
+
+
