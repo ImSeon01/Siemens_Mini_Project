@@ -42,9 +42,9 @@
 ### 카카오맵
 ![kakao_map](https://user-images.githubusercontent.com/121650379/224631125-ad03a9a9-7049-4d1b-aa3d-0202f087380f.gif)
 
-### 구글차
+### 구글차트
 ![google_chart](https://user-images.githubusercontent.com/121650379/224631179-43f25abf-8caf-42c2-8045-da3be840b4ae.gif)
-트
+
 
 
 
