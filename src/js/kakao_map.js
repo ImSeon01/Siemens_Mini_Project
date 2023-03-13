@@ -26,20 +26,4 @@ function move_map(event, lat, lng){
 
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
-
-    // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
-    let iwContent = '<div style="padding:5px;font-size:0.9rem;"><a href="http://www.easyspub.co.kr" style="color:blue;text-decoration:none;" target="_blank">이지스퍼블리싱</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-        iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
-
-    // 인포윈도우를 생성합니다
-    let infowindow = new kakao.maps.InfoWindow({
-    content : iwContent,
-    removable : iwRemoveable
-    });
-
-    // 마커에 마우스오버 이벤트를 등록합니다
-    kakao.maps.event.addListener(marker, 'click', function() {
-        // 마커 위에 인포윈도우를 표시합니다 
-        infowindow.open(map, marker);
-    });// move_map fin
-}
+}// move_map fin

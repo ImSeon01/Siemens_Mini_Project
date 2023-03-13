@@ -124,7 +124,7 @@ const project = `
 $(function(){
     show($('.button_area button').eq(0), 1);
 })
-/** 버튼을 클릭하면 인사말, 프로필, 이력, 전공지식, 프로젝트를 화면에 출력하는 함수
+/** 버튼을 클릭하면 인사말, 프로필, 기술스택, 프로젝트를 화면에 출력하는 함수
  * @author 임선혁
  */
 function show(event, num){
